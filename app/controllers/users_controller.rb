@@ -8,7 +8,10 @@ class UsersController < ApplicationController
     # just in the user show page
     #@user = User.find(session[:user_id])
 
-    @user = current_user
+    # We're moving this logic into the application layout
+    # because we want the user to see his name across the whole
+    # application if he's logged-in
+    # @user = current_user
   end
 
   def create
