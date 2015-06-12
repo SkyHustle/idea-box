@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    # This will only show us that the user is logged in
+    # just in the user show page
+    #@user = User.find(session[:user_id])
+
+    @user = current_user
   end
 
   def create
