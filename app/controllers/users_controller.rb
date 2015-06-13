@@ -4,14 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    # This will only show us that the user is logged in
-    # just in the user show page
-    #@user = User.find(session[:user_id])
-
-    # We're moving this logic into the application layout
-    # because we want the user to see his name across the whole
-    # application if he's logged-in
-    # @user = current_user
   end
 
   def create
