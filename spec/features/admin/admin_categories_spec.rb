@@ -2,12 +2,13 @@ require 'rails_helper'
 
 RSpec.describe User, type: :feature do
   scenario "logged in admin sees categories" do
-    admin = User.create(username: "admin",
-                        password: "password",
-                        role: 1)
+    admin = User.create(username: "joerugular", 
+                       password: "password", 
+                       role: 0)
 
-    ApplicationController.any_instance.stubs(:current_user).returns(admin)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
     visit admin_categories_path
-    assert page.has_content?("All Categories")
+    expect(page).to_not have_content("All Categories")
+    expect(page).to have_content("The page you were looking for doesn't exist")
   end
 end
