@@ -11,7 +11,7 @@ RSpec.describe User, type: :feature do
     expect(page).to have_content("All Categories")
   end
 
-  xscenario "default user sees 404 error in admin area" do
+  scenario "default user sees 404 error in admin area" do
     user = User.create(username: "joerugular", 
                        password: "password", 
                        role: 0)
