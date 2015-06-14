@@ -9,6 +9,7 @@ RSpec.describe User, type: :feature do
     fill_in "Password", with: "mania"
     click_button "Login"
 
+    # save_and_open_page
     expect(page).to have_content(user.username)
   end
 end
